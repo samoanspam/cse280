@@ -19,11 +19,11 @@ Identify (with an "X") whether each statement is either a proposition or non-pro
 |:-:|:-:|:-:|
 |I got an A in CSE 280|X||
 |Hello!||X|
-|The hose has a leak.|||
-|The wind speed is greater than 30 miles per hour.|||
-|Close the window.|||
-|The window is closed.|||
-|Are you graduating this semester?|||
+|The hose has a leak.|X||
+|The wind speed is greater than 30 miles per hour.|X||
+|Close the window.||X|
+|The window is closed.|X||
+|Are you graduating this semester?||X|
 
 ## Question 2 (28 points)
 
