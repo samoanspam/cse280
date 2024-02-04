@@ -67,6 +67,8 @@ f1_points = {(x,f1(x)) for x in domain}
 f2_points = {(x,f2(x)) for x in domain}
 f3_points = {(x,f3(x)) for x in domain}
 
+# It would be fun to make them all in the order represented below but idk...
+
 # Expected results below may be sorted differently
 print(f1_points)
 # {(3, 40), (-1, 0), (4, 85), (2, 15), (5, 156), (-2, -5), (-5, -104), (1, 4), (-4, -51), (-3, -20), (0, 1)}
