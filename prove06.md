@@ -19,11 +19,11 @@ Fill in the adjacency table below for the graph below:
 
 |Vertex|Adjacent Verticies|
 |:-:|:-:|
-|0||
-|1||
-|2||
-|3||
-|4||
+|0|1,3|
+|1|0,2,4|
+|2|1,3|
+|3|0,2,4|
+|4|1,3|
 
 ## Question 2 (8 points)
 
@@ -33,10 +33,10 @@ The list of 9 graphs below have 4 pairs of isomorphic graphs.  Find the 4 pairs.
 
 |#|Isomorphic Pairs|
 |:-:|:-:|
-|1st Pair||
-|2nd Pair||
-|3rd Pair||
-|4th Pair||
+|1st Pair|(1,4)|
+|2nd Pair|(2,7)|
+|3rd Pair|(3,6)|
+|4th Pair|(5,8)|
 
 Source: Question adapted from Applied Discrete Structures by Alan Doerr & Kenneth Levasseur which is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 United States License.
 
@@ -47,15 +47,20 @@ Write python code to create an adjacency table for the undirected graph below.  
 ![](prove06_graph3.png)
 
 ```python
-adjacency_table = None # Add your code here
+adjacency_table = {
+    'A': ['B', 'C'],
+    'B': ['A', 'C', 'D'],
+    'C': ['A', 'B', 'D'],
+    'D': ['B', 'C', 'E', 'F'],
+    'E': ['D', 'F'],
+    'F': ['D', 'E']
+}
 
-def find_neighbors(vertex, adjaceny_table):
-    # Add your code here
-    return None
+def find_neighbors(vertex, adjacency_table):
+    return adjacency_table[vertex]
 
 def is_neighbor(vertex1, vertex2, adjacency_table):
-    # Add your code here
-    return None
+    return vertex2 in adjacency_table[vertex1]
 
 print(find_neighbors('A', adjacency_table)) # should print ['B', 'C']
 print(find_neighbors('D', adjacency_table)) # should print ['C', 'E', 'F']
@@ -71,9 +76,9 @@ Determine if the graph below has an Euler Circuit.  If it does, then write down 
 
 |Graph|Euler Cycle|
 |:-:|:-:|
-|![](prove06_graph4.png)||
-|![](prove06_graph5.png)||
-|![](prove06_graph6.png)||
+|![](prove06_graph4.png)|No Euler Cycle|
+|![](prove06_graph5.png)|A,B,C,D,E,A|
+|![](prove06_graph6.png)|No Euler Cycle|
 
 ## Question 5 (16 points)
 
@@ -85,14 +90,14 @@ Complete the tables below to identify the final state (per the FSM diagram) and 
 
 |Input|Final State|Accepting (Yes/No)|
 |:-:|:-:|:-:|
-|00101|||
-|011100|||
-|01111|||
-|0101|||
-|00000|||
-|11111|||
-|11100|||
-|10011|||
+|00101|q2|No|
+|011100|q4|Yes|
+|01111|q4|Yes|
+|0101|q4|Yes|
+|00000|q1|Yes|
+|11111|q3|No|
+|11100|q3|No|
+|10011|q2|No|
 
 **Part 2**
 
@@ -100,14 +105,14 @@ Complete the tables below to identify the final state (per the FSM diagram) and 
 
 |Input|Final State|Accepting (Yes/No)|
 |:-:|:-:|:-:|
-|00101|||
-|011100|||
-|01111|||
-|0101|||
-|00000|||
-|11111|||
-|11100|||
-|10011|||
+|00101|q2|Yes|
+|011100|q4|Yes|
+|01111|q4|Yes|
+|0101|q4|Yes|
+|00000|q1|Yes|
+|11111|q3|Yes|
+|11100|q3|Yes|
+|10011|q2|Yes|
 
 ## Question 6 (4 points)
 
@@ -115,4 +120,4 @@ Describe the bit string recognized/accepted by the following FSM:
 
 ![](prove06_graph9.png)
 
-Answer: 
+Answer: The bit string '011' is accepted by FSM.
